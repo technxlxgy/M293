@@ -137,8 +137,6 @@
 /* || HOME */
   /* || Background */
     .home-background {
-        /*background-image: linear-gradient(to right bottom, #9aad87, #9aab88, #9aaa8a, #9aa88b, #99a68c, #99a58e, #99a38f, #a3af97, #aebc9f, #b8c9a7, #c3d6af, #cde3b8, #d8f0c0);*/
-        /*background-image: linear-gradient(to right bottom, #afc49a, #abbe98, #a8b996, #a4b395, #a0ae93, #9da891, #99a38f, #a3af97, #aebc9f, #b8c9a7, #c3d6af, #cde3b8, #d8f0c0);*/
         background-image: linear-gradient(to right bottom, #d8f0c0, #cde3b8, #c3d6af, #b8c9a7, #aebc9f, #a3af97, #99a38f, #9da891, #a0ae93, #a4b395, #a8b996, #abbe98, #afc49a);
     } 
 
