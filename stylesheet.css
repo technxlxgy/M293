@@ -213,7 +213,13 @@
         
     .underlist li {
         margin-left: 20px;
-        list-style-type: none;
+        box-sizing: border-box;
+        padding-left: 10px;
+        list-style-type: "\21D2";
+    }
+
+    .underlist li::marker {
+        padding-right: 50px;
     }
     
 /* || ÜBER MICH */
@@ -268,7 +274,7 @@
     .hardskills-bild img {
         width: auto;
         height: 250px;
-        margin-left: 7rem;
+        margin-left: 5rem;
         border-radius: 7px;
         background-color: #fefbf8;
         padding: 30px;
@@ -558,7 +564,7 @@
             font-family: Demo-The-Seasons;
         }
         font-size: 100px;
-        color: #C0CFB2;
+        color: #fefbf8;
         padding: 0;
         margin: 0;
         margin: 0;
