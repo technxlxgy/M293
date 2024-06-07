@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datenbank-Management</title>
+    <link rel="stylesheet" href="stylesheet.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- Navigationsleiste -->
+    <header>
+        <nav class="navbar">
+            <span class="nav-logo">IVA S.</span>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="uebermich.html">Über mich</a>
+                </li>
+                <li class="nav-item">
+                    <a href="faehigkeiten.html">Fähigkeiten</a>
+                </li>
+                <li class="nav-item">
+                    <a href="portfolio.html">Portfolio</a>
+                </li>
+                <li class="nav-item">
+                    <a href="kontakt.html">Kontakt</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+
+<!-- Javascript für Navigationsleiste -->
+    <script>
+        const hamburger = document.querySelector(".hamburger");
+        const navMenu = document.querySelector(".nav-menu");
+
+        hamburger.addEventListener("click", mobileMenu);
+
+        function mobileMenu() {
+            hamburger.classList.toggle("active");
+            navMenu.classList.toggle("active");
+        }
+
+        const navLink = document.querySelectorAll(".nav-link");
+
+        navLink.forEach(n => n.addEventListener("click", closeMenu));
+
+        function closeMenu() {
+            hamburger.classList.remove("active");
+            navMenu.classList.remove("active");
+        }
+    </script>
+
+<!-- Inhalt -->
+<main>
+    <div class="inhaltsbox">
+        <div class="inhaltstext">
+            <h1>Datenbank-Management</h1>
+            <p class="text-in-protfolio">Aufgaben, bezüglich Datenbanken.</p>
+                             
+<button type="button" class="collapsible">Verwaltung eines Tennisvereins in Postgres</button>
+<div class="content" style="display: none;">
+    <div class="code">
+        -- <br>
+        -- PostgreSQL database dump<br>
+        --<br>
+        <br>
+        -- Dumped from database version 16.1<br>
+        -- Dumped by pg_dump version 16.1<br>
+        <br>
+        -- Started on 2024-01-29 10:53:25<br>
+        <br>
+        SET statement_timeout = 0;<br>
+        SET lock_timeout = 0;<br>
+        SET idle_in_transaction_session_timeout = 0;<br>
+        SET client_encoding = 'UTF8';<br>
+        SET standard_conforming_strings = on;<br>
+        SELECT pg_catalog.set_config('search_path', '', false);<br>
+        SET check_function_bodies = false;<br>
+        SET xmloption = content;<br>
+        SET client_min_messages = warning;<br>
+        SET row_security = off;<br>
+        <br>
+        --<br>
+        -- TOC entry 6 (class 2615 OID 16402)<br>
+        -- Name: Tennis; Type: SCHEMA; Schema: -; Owner: postgres<br>
+        --<br>
+        <br>
+        CREATE SCHEMA "Tennis";<br>
+        <br>
+        <br>
+        ALTER SCHEMA "Tennis" OWNER TO postgres;<br>
+        <br>
+        SET default_tablespace = '';<br>
+        <br>
+        SET default_table_access_method = heap;<br>
+        <br>
+        --<br>
+        -- TOC entry 218 (class 1259 OID 16424)<br>
+        -- Name: Club; Type: TABLE; Schema: Tennis; Owner: postgres<br>
+        --<br>
+        <br>
+        CREATE TABLE "Tennis"."Club" (<br>
+            "id_Club" integer NOT NULL,<br>
+            "Clubname" text,<br>
+            "Mitgliederanzahl" integer<br>
+        );<br>
+        <br>
+        <br>
+        ALTER TABLE "Tennis"."Club" OWNER TO postgres;<br>
+        <br>
+        --<br>
+        -- TOC entry 216 (class 1259 OID 16403)<br>
+        -- Name: Mitglied; Type: TABLE; Schema: Tennis; Owner: postgres<br>
+        --<br>
+        <br>
+        CREATE TABLE "Tennis"."Mitglied" (<br>
+            "id_Mitglied" integer NOT NULL,<br>
+            "Nachname" text,<br>
+            "Vorname" text,<br>
+            "Geburtsdatum" date,<br>
+            "Adresse" character varying<br>
+        );<br>
+        <br>
+        <br>
+        ALTER TABLE "Tennis"."Mitglied" OWNER TO postgres;<br>
+        <br>
+        --<br>
+        -- TOC entry 217 (class 1259 OID 16410)<br>
+        -- Name: Mitgliedschaft; Type: TABLE; Schema: Tennis; Owner: postgres<br>
+        --<br>
+        <br>
+        CREATE TABLE "Tennis"."Mitgliedschaft" (<br>
+            "id_Mitgliedschaft" integer NOT NULL,<br>
+            "fs_Mitglied" integer,<br>
+            "fs_Club" integer,<br>
+            "Eintritt" date,<br>
+            "Ablaufdatum" date<br>
+        );<br>
+        <br>
+        <br>
+        ALTER TABLE "Tennis"."Mitgliedschaft" OWNER TO postgres;<br>
+        <br>
+        --<br>
+        -- TOC entry 220 (class 1259 OID 16441)<br>
+        -- Name: Tennisplatz; Type: TABLE; Schema: Tennis; Owner: postgres<br>
+        --<br>
+        <br>
+        CREATE TABLE "Tennis"."Tennisplatz" (<br>
+            "id_Tennisplatz" integer NOT NULL,<br>
+            "Tennisplatznummer" integer<br>
+        );<br>
+        <br>
+        <br>
+        ALTER TABLE "Tennis"."Tennisplatz" OWNER TO postgres;<br>
+        <br>
+        --<br>
+        -- TOC entry 219 (class 1259 OID 16436)<br>
+        -- Name: Training; Type: TABLE; Schema: Tennis; Owner: postgres<br>
+        --<br>
+        <br>
+        CREATE TABLE "Tennis"."Training" (<br>
+            "id_Training" integer NOT NULL,<br>
+            "fs_Tennisplatz" integer,<br>
+            "fs_Club" integer,<br>
+            "Reservation" date<br>
+        );<br>
+        <br>
+        <br>
+        ALTER TABLE "Tennis"."Training" OWNER TO postgres;<br>
+        <br>
+        --<br>
+        -- TOC entry 222 (class 1259 OID 16461)<br>
+        -- Name: Turnier; Type: TABLE; Schema: Tennis; Owner: postgres<br>
+        --<br>
+        <br>
+        CREATE TABLE "Tennis"."Turnier" (<br>
+            "id_Turnier" integer NOT NULL,<br>
+            "Datum" date<br>
+        );<br>
+        <br>
+        <br>
+        ALTER TABLE "Tennis"."Turnier" OWNER TO postgres;<br>
+        <br>
+        --<br>
+        -- TOC entry 221 (class 1259 OID 16456)<br>
+        -- Name: Turnierfeld; Type: TABLE; Schema: Tennis; Owner: postgres<br>
+        --<br>
+        <br>
+        CREATE TABLE "Tennis"."Turnierfeld" (<br>
+            "id_Turnierfeld" integer NOT NULL,<br>
+            "fs_Turnier" integer,<br>
+            "fs_Tennisplatz" integer<br>
+        );<br>
+        <br>
+        <br>
+        ALTER TABLE "Tennis"."Turnierfeld" OWNER TO postgres;<br>
+        
+        --<br>
+        -- TOC entry 223 (class 1259 OID 16476)<br>
+        -- Name: Turnierteilnahme; Type: TABLE; Schema: Tennis; Owner: postgres<br>
+        --<br>
+        
+        CREATE TABLE "Tennis"."Turnierteilnahme" (<br>
+            "id_Turnierteilnahme" integer NOT NULL,<br>
+            "fs_Mitglied" integer,<br>
+            "fs_Turnier" integer<br>
+        );<br>
+        <br>
+        <br>
+        ALTER TABLE "Tennis"."Turnierteilnahme" OWNER TO postgres;<br>
+        <br>
+        --<br>
+        -- TOC entry 224 (class 1259 OID 16514)<br>
+        -- Name: test; Type: TABLE; Schema: public; Owner: postgres<br>
+        --<br>
+        <br>
+        CREATE TABLE public.test (<br>
+            i integer NOT NULL<br>
+        );<br>
+        <br>
+        <br>
+        ALTER TABLE public.test OWNER TO postgres;<br>
+        <br>
+        --<br>
+        -- TOC entry 4837 (class 0 OID 16424)<br>
+        -- Dependencies: 218<br>
+        -- Data for Name: Club; Type: TABLE DATA; Schema: Tennis; Owner: postgres<br>
+        --<br>
+        <br>
+        INSERT INTO "Tennis"."Club" ("id_Club", "Clubname", "Mitgliederanzahl") VALUES (1, 'ClubEins', 12);<br>
+        INSERT INTO "Tennis"."Club" ("id_Club", "Clubname", "Mitgliederanzahl") VALUES (2, 'Tennisbros', 15);<br>
+        INSERT INTO "Tennis"."Club" ("id_Club", "Clubname", "Mitgliederanzahl") VALUES (3, 'Tennisprofis', 10);<br>
+        <br>
+        <br>
+        --<br>
+        -- TOC entry 4835 (class 0 OID 16403)<br>
+        -- Dependencies: 216<br>
+        -- Data for Name: Mitglied; Type: TABLE DATA; Schema: Tennis; Owner: postgres<br>
+        --<br>
+        <br>
+        INSERT INTO "Tennis"."Mitglied" ("id_Mitglied", "Nachname", "Vorname", "Geburtsdatum", "Adresse") VALUES (1, 'Claus', 'Santa', '1864-12-24', 'Nordpolgasse');<br>
+        INSERT INTO "Tennis"."Mitglied" ("id_Mitglied", "Nachname", "Vorname", "Geburtsdatum", "Adresse") VALUES (2, 'Muster', 'Max', '2006-05-02', 'Musterstrasse');<br>
+        INSERT INTO "Tennis"."Mitglied" ("id_Mitglied", "Nachname", "Vorname", "Geburtsdatum", "Adresse") VALUES (3, 'Müller', 'Sina', '2007-11-14', 'Sonnenstrasse');<br>
+        INSERT INTO "Tennis"."Mitglied" ("id_Mitglied", "Nachname", "Vorname", "Geburtsdatum", "Adresse") VALUES (4, 'Peter', 'Hans', '1999-03-20', 'Mondweg');<br>
+        <br>
+        <br>
+        --<br>
+        -- TOC entry 4836 (class 0 OID 16410)<br>
+        -- Dependencies: 217<br>
+        -- Data for Name: Mitgliedschaft; Type: TABLE DATA; Schema: Tennis; Owner: postgres<br>
+        --<br>
+        <br>
+        INSERT INTO "Tennis"."Mitgliedschaft" ("id_Mitgliedschaft", "fs_Mitglied", "fs_Club", "Eintritt", "Ablaufdatum") VALUES (1, 2, 3, '2020-10-03', '2024-10-03');<br>
+        INSERT INTO "Tennis"."Mitgliedschaft" ("id_Mitgliedschaft", "fs_Mitglied", "fs_Club", "Eintritt", "Ablaufdatum") VALUES (2, 1, 3, '2021-03-11', '2025-03-11');<br>
+        INSERT INTO "Tennis"."Mitgliedschaft" ("id_Mitgliedschaft", "fs_Mitglied", "fs_Club", "Eintritt", "Ablaufdatum") VALUES (3, 3, 1, '2020-01-27', '2024-01-27');<br>
+        <br>
+        <br>
+        --<br>
+        -- TOC entry 4839 (class 0 OID 16441)<br>
+        -- Dependencies: 220<br>
+        -- Data for Name: Tennisplatz; Type: TABLE DATA; Schema: Tennis; Owner: postgres<br>
+    </div>
+</div>
+
+<button type="button" class="collapsible">Verwaltung eines Ticketsystems in SQLite in Kombination mit Python</button>
+<div class="content" style="display: none;">
+    <div class="code">
+        <p>
+            import csv<br>
+            import sqlite3<br>
+            <br>
+            # Funktion zum Konvertieren von "WAHR" (=1) und "FALSCH" (=0)<br>
+            <br>
+            def convert_bool(value):<br>
+                if value.upper() == "WAHR":<br>
+                    return 1<br>
+                elif value.upper() == "FALSCH":<br>
+                    return 0<br>
+                else:<br>
+                    return value<br>
+            <br>
+            <br>
+            # CSV-Datei einlesen und Daten konvertieren<br>
+            with open('incident_event_logg.csv', 'r') as csvfile:<br>
+                csv_reader = csv.reader(csvfile)<br>
+                headers = next(csv_reader)  # Überspringt die Kopfzeile<br>
+                data = [tuple([convert_bool(value) if idx == 0 else value for idx, value in enumerate(row)]) for row in csv_reader]<br>
+            <br>
+            # Verbindung zur SQLite-Datenbank herstellen<br>
+            conn = sqlite3.connect('m162.db')<br>
+            conn.execute('PRAGMA foreign_keys = ON')  # Aktiviert Fremdschlüsselunterstützung<br>
+            cur = conn.cursor()  # Cursor-Objekt erstellen<br>
+            <br>
+            cur.execute('''DROP TABLE IF EXISTS ticket''')<br>
+            cur.execute('''DROP TABLE IF EXISTS caller''')<br>
+            cur.execute('''DROP TABLE IF EXISTS user''')<br>
+            # creating a table<br>
+            cur.execute('''CREATE TABLE caller (<br>
+                            id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,<br>
+                            caller_id VARCHAR(20) UNIQUE,<br>
+                            contact_type VARCHAR(20),<br>
+                            location VARCHAR(20)<br>
+                            )''')<br>
+            <br>
+            cur.execute('''CREATE TABLE user (<br>
+                            id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,<br>
+                            username VARCHAR(20) UNIQUE<br>
+                            )''')<br>
+            <br>
+            cur.execute('''CREATE TABLE ticket (<br>
+                            id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,<br>
+                            caller_id INTEGER,<br>
+                            opened_by INTEGER NOT NULL,<br>
+                            opened_at DATETIME,<br>
+                            resolved_by INTEGER NULL,<br>
+                            resolved_at DATETIME NULL,<br>
+                            FOREIGN KEY(caller_id) REFERENCES caller(id) ,<br>
+                            FOREIGN KEY(opened_by) REFERENCES user(id),<br>
+                            FOREIGN KEY(resolved_by) REFERENCES user(id)<br>
+                            )''')<br>
+            <br>
+            conn.commit()<br>
+            <br>
+            for row in data:<br>
+                try:<br>
+                # Daten in die SQLite-Datenbank einfügen<br>
+                    cur.execute('''INSERT OR IGNORE INTO caller (caller_id, contact_type, location)<br>
+                                        VALUES (?, ?, ?)''', [row[7], row[14], row[15]])<br>
+            <br>
+                    cur.execute('''INSERT OR IGNORE INTO user (username)<br>
+                                        VALUES (?)''', [row[8]])<br>
+            <br>
+                    cur.execute('''INSERT OR IGNORE INTO user (username)<br>
+                                        VALUES (?)''', [row[33]])<br>
+            <br>
+                except Exception as e:<br>
+                    print(e)<br>
+            <br>
+            conn.commit()<br>
+            <br>
+            for row in data:<br>
+                try:<br>
+                    callerresult = cur.execute('''SELECT id FROM caller WHERE caller_id = ?''', [row[7]])<br>
+                    callerid = callerresult.fetchone()<br>
+            <br>
+                    openerresult = cur.execute('''SELECT id FROM user WHERE username = ?''', [row[8]])<br>
+                    openerid = openerresult.fetchone()<br>
+            <br>
+                    resolverresult = cur.execute('''SELECT id FROM user WHERE username = ?''', [row[33]])<br>
+                    resolverid = resolverresult.fetchone()<br>
+            <br>
+            <br>
+                    cur.execute('''INSERT INTO ticket (caller_id, opened_by, opened_at, resolved_by, resolved_at)<br>
+                                            VALUES (?, ?, ?, ?, ?)''', [callerid[0], openerid[0], row[9], resolverid[0], row[34]])<br>
+                except Exception as e:<br>
+                    print(e)<br>
+            <br>
+            conn.commit()<br>
+            conn.close()<br>
+        </p>                    
+    </div>
+</div>   
+
+<button type="button" class="collapsible">Subqueries in mySQL</button>
+<div class="content" style="display: none;">
+  <p class="content-inhalt">Hier ist noch nichts vorhanden. Updates folgen...</p>
+</div>
+                <script>
+                var coll = document.getElementsByClassName("collapsible");
+                var i;
+                
+                for (i = 0; i < coll.length; i++) {
+                  coll[i].addEventListener("click", function() {
+                    this.classList.toggle("active");
+                    var content = this.nextElementSibling;
+                    if (content.style.display === "block") {
+                      content.style.display = "none";
+                    } else {
+                      content.style.display = "block";
+                    }
+                  });
+                }
+                </script>            
+        </div>
+    </div>
+</main>
+
+    <!-- Footer -->
+    <footer>
+        <nav class="footerbar">
+            <ul class="footer-menu">
+                <li class="footer-item">
+                    <a href="impressum.html">Impressum</a>
+                </li>
+            </ul>
+        </nav>
+    </footer>
+</body>
+</html>

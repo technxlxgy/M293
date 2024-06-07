@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt</title>
+    <link rel="stylesheet" href="stylesheet.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+<!-- Navigationsleiste -->
+    <header>
+        <nav class="navbar">
+            <span class="nav-logo">IVA S.</span>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="uebermich.html">Über mich</a>
+                </li>
+                <li class="nav-item">
+                    <a href="faehigkeiten.html">Fähigkeiten</a>
+                </li>
+                <li class="nav-item">
+                    <a href="portfolio.html">Portfolio</a>
+                </li>
+                <li class="nav-item">
+                    <a href="kontakt.html">Kontakt</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+
+<!-- Javascript für Navigationsleiste (Hamburger) -->
+    <script>
+        const hamburger = document.querySelector(".hamburger");
+        const navMenu = document.querySelector(".nav-menu");
+
+        hamburger.addEventListener("click", mobileMenu);
+
+        function mobileMenu() {
+            hamburger.classList.toggle("active");
+            navMenu.classList.toggle("active");
+        }
+
+        const navLink = document.querySelectorAll(".nav-link");
+
+        navLink.forEach(n => n.addEventListener("click", closeMenu));
+
+        function closeMenu() {
+            hamburger.classList.remove("active");
+            navMenu.classList.remove("active");
+        }
+    </script>
+
+<!-- Inhalt -->
+<main>
+    <div class="kontakt-container">
+        <div class="container-left">
+            <form action="https://api.web3forms.com/submit" method="POST" class="contact-left">
+                <h1>Kontakt</h1>
+                <input type="hidden" name="access_key" value="096ffdd9-e927-49ad-bf1f-63449cc41833">
+                <div class="kontakt-gruppe">
+                    <label for="name">Vor- und Nachname</label>
+                    <input type="text" name="name" placeholder="Hans Mustermann" class="contact-inputs" required>
+                </div>
+                <div class="kontakt-gruppe">
+                    <label for="email">E-Mail</label>
+                    <input type="email" name="email" placeholder="hans.mustermann@outlook.ch" class="contact-inputs" required>
+                </div>
+                <div class="kontakt-gruppe">
+                    <label for="message">Nachricht</label>
+                    <textarea name="message" placeholder="Ihre Nachricht" class="contact-inputs" required></textarea>
+                </div>
+                <button type="submit">Absenden</button>
+            </form>
+        </div>
+        <div class="container-right">
+            <h3>Standort meiner Schule:</h3>
+            <iframe style="max-width: max-content;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2683.1271355235435!2d9.366545796890268!3d47.41238393090867!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479b1fb70624a10b%3A0x14ef299213b06a01!2sGewerbliches%20Berufs-%20und%20Weiterbildungszentrum%20St.Gallen%20(GBS%20St.Gallen)!5e0!3m2!1sde!2sch!4v1716375532592!5m2!1sde!2sch" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </div>
+</main>
+
+<!-- Javascript für Kontaktformular -->                
+
+<!-- Footer -->
+    <footer>
+        <nav class="footerbar">
+            <ul class="footer-menu">
+                <li class="footer-item">
+                    <a href="impressum.html">Impressum</a>
+                </li>
+            </ul>
+        </nav>
+    </footer>
+</body>
+</html>

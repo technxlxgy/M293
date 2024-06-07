@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Iva Savic</title>
+    <link rel="stylesheet" href="stylesheet.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+<!-- Navigationsleiste -->
+    <header>
+        <nav class="navbar">
+            <span class="nav-logo">IVA S.</span>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="uebermich.html">Über mich</a>
+                </li>
+                <li class="nav-item">
+                    <a href="faehigkeiten.html">Fähigkeiten</a>
+                </li>
+                <li class="nav-item">
+                    <a href="portfolio.html">Portfolio</a>
+                </li>
+                <li class="nav-item">
+                    <a href="kontakt.html">Kontakt</a>
+                </li>
+                <li class="nav-item on-active">
+                    <a href="impressum.html">Impressum</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+
+<!-- Javascript für Navigationsleiste (Hamburger) -->
+    <script>
+        const hamburger = document.querySelector(".hamburger");
+        const navMenu = document.querySelector(".nav-menu");
+
+        hamburger.addEventListener("click", mobileMenu);
+
+        function mobileMenu() {
+            hamburger.classList.toggle("active");
+            navMenu.classList.toggle("active");
+        }
+
+        const navLink = document.querySelectorAll(".nav-link");
+
+        navLink.forEach(n => n.addEventListener("click", closeMenu));
+
+        function closeMenu() {
+            hamburger.classList.remove("active");
+            navMenu.classList.remove("active");
+        }
+    </script>
+
+<!-- Hintergrund -->
+
+
+<!-- Titel -->
+    <main class="home-background">
+        <div class=".landingimg">
+            <div class="titelklasse">
+                <div class="titel-gross">
+                    <h1 class="titel">IVA</h1>
+                </div>
+                <div class="titel-klein">
+                    <span class="untertitel">portfolio</span>
+                </div>
+                <div class="titel-gross">
+                    <h1 class="titel">SAVIC</h1>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

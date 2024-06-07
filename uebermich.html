@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Über mich</title>
+    <link rel="stylesheet" href="stylesheet.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigationsleiste -->
+    <header>
+        <nav class="navbar">
+            <span class="nav-logo">IVA S.</span>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="uebermich.html">Über mich</a>
+                </li>
+                <li class="nav-item">
+                    <a href="faehigkeiten.html">Fähigkeiten</a>
+                </li>
+                <li class="nav-item">
+                    <a href="portfolio.html">Portfolio</a>
+                </li>
+                <li class="nav-item">
+                    <a href="kontakt.html">Kontakt</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+
+<!-- Javascript für Navigationsleiste -->
+    <script>
+        const hamburger = document.querySelector(".hamburger");
+        const navMenu = document.querySelector(".nav-menu");
+
+        hamburger.addEventListener("click", mobileMenu);
+
+        function mobileMenu() {
+            hamburger.classList.toggle("active");
+            navMenu.classList.toggle("active");
+        }
+
+        const navLink = document.querySelectorAll(".nav-link");
+
+        navLink.forEach(n => n.addEventListener("click", closeMenu));
+
+        function closeMenu() {
+            hamburger.classList.remove("active");
+            navMenu.classList.remove("active");
+        }
+    </script>
+
+<!-- Inhalt -->
+<main>
+    <div class="inhaltsbox">
+        <div class="inhaltstitel">
+            <h1>Über mich</h1>
+        </div>
+        <div class="ubermichcontent">
+            <div class="ubermichbild">
+                <a href="https://www.youtube.com/watch?v=vSWTrb6KINI&ab_channel=Tasty">
+                    <img 
+                    src="./Bilder/tabitha-turner-Qz2oUAhXMiY-unsplash.jpg" 
+                    alt="Placeholder">
+                </a>
+            </div>
+            <div class="ubermichtext">
+                <p>Liebe Leser, mein Name ist Iva Savic, ich bin 19 Jahre alt und mache eine Lehre als Informatikerin EFZ - Fachrichtung Applikationsentwicklung. 
+                    Zwei Tage wöchentlich besuche die Berufsfachschule GBS St. Gallen und arbeite an den anderen drei Tagen im Betrieb. Vor Beginn meiner Ausbildung zur Informatikerin war ich 2 Jahre lang im KV tätig.
+                    <br>
+                    <br>
+                    Ich habe mich für den Beruf des Informatikers entschieden, weil ich gerne am Comupter arbeite und mich später in diesem Bereich weiterbilden möchte. Mein Ziel ist es studieren zu gehen.
+                    Da mir Modul 164 (Datenbanken erstellen und Daten einfügen) und Modul 106 (Datenbanken abfragen, bearbeiten und warten) bis jetzt am besten gefallen haben, sehe ich mich am ehesten im Fachbereich Data-Management.
+                    Das breite Spektrum und die Entwicklung der verschiedenen Technologien faszinieren mich an der Informatik.
+                    <br>
+                    <br>
+                    In meiner Freizeit spiele ich Klavier und Cello. Ebenso lese ich gerne Bücher und trinke Tee. Meine Lieblingsfarbe ist Grün, ich mag es in der Natur spazieren zu gehen und ich trinke gerne Matcha. Wahrscheinlich erklärt das auch wieso mein Design grüne Elemente enthält.
+                    <br>
+                    <br>
+                    Meine Lieblingsbücher sind:
+                    <br>
+                    <br>
+                </p>
+                <ul class="hobbylist">
+                    <li>Die Verwandlung - Franz Kafka</li>
+                    <li>Frankenstein - Marry Shelly</li>
+                    <li>Schuld und Sühne - Fjodor Dostojewski</li>
+                </ul>
+            </div> 
+        </div>      
+    </div>
+</main>
+
+<!-- Footer -->
+    <footer>
+        <nav class="footerbar">
+            <ul class="footer-menu">
+                <li class="footer-item">
+                    <a href="impressum.html">Impressum</a>
+                </li>
+            </ul>
+        </nav>
+    </footer>
+</body>
+</html>

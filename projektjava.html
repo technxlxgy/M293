@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Getränkeautomat in Java</title>
+    <link rel="stylesheet" href="stylesheet.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Navigationsleiste -->
+    <header>
+        <nav class="navbar">
+            <span class="nav-logo">IVA S.</span>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="uebermich.html">Über mich</a>
+                </li>
+                <li class="nav-item">
+                    <a href="faehigkeiten.html">Fähigkeiten</a>
+                </li>
+                <li class="nav-item">
+                    <a href="portfolio.html">Portfolio</a>
+                </li>
+                <li class="nav-item">
+                    <a href="kontakt.html">Kontakt</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+
+<!-- Javascript für Navigationsleiste -->
+    <script>
+        const hamburger = document.querySelector(".hamburger");
+        const navMenu = document.querySelector(".nav-menu");
+
+        hamburger.addEventListener("click", mobileMenu);
+
+        function mobileMenu() {
+            hamburger.classList.toggle("active");
+            navMenu.classList.toggle("active");
+        }
+
+        const navLink = document.querySelectorAll(".nav-link");
+
+        navLink.forEach(n => n.addEventListener("click", closeMenu));
+
+        function closeMenu() {
+            hamburger.classList.remove("active");
+            navMenu.classList.remove("active");
+        }
+    </script>
+
+<main>
+    <div class="inhaltsbox">
+        <div class="inhaltstext">
+            
+            <h1>Virtueller Getränkeautomat in Java (ohne GUI)</h1>
+            <p class="text-in-protfolio">Dies ist das erste Programm, das ich je geschrieben habe, daher ist es nicht so kompakt und gut geschrieben. Ich habe es letztes Jahr gemacht und werde es irgendwann in Zukunft überarbeiten und ein GUI dazu programmieren. Updates folgen...</p>
+            <div class="code">
+                <p>
+//(Auswahl + Preisanzeige)<br>
+<br>
+import java.util.InputMismatchException;<br>
+import java.util.Scanner;<br>
+<br>
+import javax.sound.midi.SysexMessage;<br>
+import javax.swing.plaf.basic.BasicInternalFrameTitlePane.SystemMenuBar;<br>
+<br>
+public class Main {<br>
+    <br>
+    public static void main (String[] args) {<br>
+        int anzahlKaffee = 0;<br>
+        int anzahlCola = 0;<br>
+        int anzahlSchorle = 0;<br>
+        <br>
+        //Getränke erstellen<br>
+        produkt cola = new produkt((float)2.50, "Cola");<br>
+        produkt kaffee = new produkt((float)0.90, "Kaffee");<br>
+        produkt schorle = new produkt((float)3.20, "Schorle");<br>
+        <br>
+        Scanner Eingabe = new Scanner(System.in);<br>
+        <br>
+        //String myString;<br>
+        boolean antwortGültig = true;    <br>                        
+        while (antwortGültig) {<br>
+            boolean getränkGültig = true;<br>
+            while(getränkGültig) {<br>
+                //erste Schleife<br>
+                try {<br>
+                    System.out.println("Wählen Sie ein Geränk aus. 1. Cola, 2. Kaffee, 3. Schorle");<br>
+                    int gewünschtesProdukt;<br>
+                    gewünschtesProdukt = Eingabe.nextInt(); <br>
+                    //Auswahl Getränk<br>
+                    switch(gewünschtesProdukt) {<br>
+                        case 1:<br>
+                            boolean eingabeUngültig1 = true;<br>
+                            while(eingabeUngültig1) {<br>
+                                System.out.println("Anzahl Cola: ");<br>
+                                try {    <br>
+                                    int eingabe = Eingabe.nextInt();<br>
+                                    if(eingabe >= 1 && eingabe <= 100) {<br>
+                                    anzahlCola += eingabe;<br>
+                                    eingabeUngültig1 = false;<br>
+                                    <br>
+                                } else { <br>
+                                    System.out.println("Bitte eine Zahl - die grösser als Null aber kleiner als Hundert ist - angeben.");<br>
+                                  }<br>
+                                }<br>
+                                catch(InputMismatchException myException) {<br>
+                                System.out.println("Ihre Eingabe ist ungültig.");<br>
+                                Eingabe.nextLine();<br>
+                                }<br>
+                            } <br>
+                        break;<br>
+                        case 2:<br>
+                            boolean eingabeUngültig2 = true;<br>
+                            while(eingabeUngültig2) {<br>
+                                System.out.println("Anzahl Kaffee: ");  <br>
+                                try {    <br>
+                                    int eingabe = Eingabe.nextInt();<br>
+                                    if(eingabe >= 1 && eingabe <= 100) {<br>
+                                    anzahlKaffee += eingabe;<br>
+                                    eingabeUngültig2 = false;<br>
+                                } else { <br>
+                                    System.out.println("Bitte eine Zahl - die grösser als Null aber kleiner als Hundert ist - angeben.");<br>
+                                  }<br>
+                                }<br>
+                                catch(InputMismatchException myException) {<br>
+                                    System.out.println("Ihre Eingabe ist ungültig.");<br>
+                                    Eingabe.nextLine();<br>
+                                }<br>
+                            }<br>
+                        break;<br>
+                        case 3:<br>
+                            boolean eingabeUngültig3 = true;<br>
+                            while(eingabeUngültig3) {<br>
+                                System.out.println("Anzahl Schorle: ");  <br>
+                                try {    <br>
+                                    int eingabe = Eingabe.nextInt();<br>
+                                    if(eingabe >= 1 && eingabe <= 100) {<br>
+                                    anzahlSchorle += eingabe;<br>
+                                    eingabeUngültig3 = false;<br>
+                                } else { <br>
+                                    System.out.println("Bitte eine Zahl - die grösser als Null aber kleiner als Hundert ist - angeben.");<br>
+                                  }<br>
+                                }<br>
+                                catch(InputMismatchException myException) {<br>
+                                    System.out.println("Ihre Eingabe ist ungültig.");<br>
+                                    Eingabe.nextLine();<br>
+                                }<br>
+                            }<br>
+                        break;<br>
+                        default:<br>
+                            System.out.println("Dies ist kein vorhandenes Getränk.");<br>
+                        continue;<br>
+                    }<br>
+                }<br>
+                catch(InputMismatchException myException) {<br>
+                    System.out.println("Dies ist keine gültige Eingabe");<br>
+                    Eingabe.nextLine(); //Leer<br>
+                continue;<br>
+                }<br>
+                    break;<br>
+            }<br>
+            //zweite Schleife<br>
+            boolean antworten = true;<br>
+                while(antworten) {<br>
+                    System.out.println("Möchten Sie ein weiteres Getränk kaufen?");<br>
+                    String antwort = Eingabe.next();<br>
+                    <br>
+                    if(antwort.equals("Ja")) {<br>
+                            break;<br>
+                    }<br>
+                    else if (antwort.equals("Nein")) {<br>      
+                            antwortGültig = false;<br>
+                            break;   <br>
+                    }<br>
+                    else {<br>
+                            Eingabe.nextLine();<br>
+                            System.out.println("Bitte antworten Sie entweder mit Ja oder Nein.");<br>
+                    }<br>
+                }  <br>
+        }<br>
+        <br>
+        //Berechnung des Preises      <br>
+        float totalPreisCola = cola.preis * anzahlCola;<br>
+        float totalPreisKaffee = kaffee.preis * anzahlKaffee;<br>
+        float totalPreisSchorle = schorle.preis * anzahlSchorle;<br>
+        <br>
+        float totalPreis = totalPreisCola + totalPreisKaffee + totalPreisSchorle;<br>
+        System.out.printf("Total Preis: %.2f Fr.%n", totalPreis);<br>
+        <br>
+        //Geldeinwurf<br>
+        float eingeworfenesGeld = 0;<br>
+        float restBetrag = totalPreis;<br>
+        System.out.println("Bitte werfen Sie Geld ein. Wir nehmen nur Münzen!");<br>
+        <br>
+        while(restBetrag > 0) {<br>
+            <br>
+            <br>
+            try {<br>
+                float eingeworfenerBetrag = Eingabe.nextFloat();<br>
+                   if (eingeworfenerBetrag == 0.10f || eingeworfenerBetrag == 0.20f || eingeworfenerBetrag == 0.50 || eingeworfenerBetrag == 1.00 || eingeworfenerBetrag == 2.00 || eingeworfenerBetrag == 5.00) {<br>
+                        eingeworfenesGeld += eingeworfenerBetrag;<br>
+                        restBetrag -= eingeworfenerBetrag;<br>
+                                if (restBetrag > 0) {<br>
+                                System.out.printf("Noch zu zahlen: %.2f Fr.%n", restBetrag);<br>
+                                }<br>
+                                else if (restBetrag == 0) {<br>
+                                    System.out.println("Danke für Ihren Einkauf! Aufwiedersehen.");<br>
+                                }<br>
+                                else if (restBetrag < 0) {<br>
+                                    System.out.printf("Danke für Ihren Einkauf! Hier Ihr Restgeld: %.2f Fr.%n", restBetrag * -1);<br>
+                                }<br>
+                            continue;<br>
+                    }<br>
+                    else {<br>
+                        System.out.println("Ungültiger Betrag. Bitte geben Sie eine der folgenden Beträge ein:");<br>
+                        System.out.println("0.10, 0.20, 0.50, 1.00, 2.00, 5.00");<br>
+                        Eingabe.nextLine(); //Leer<br>
+                    }<br>
+            }<br>
+            catch (InputMismatchException myException){<br>
+                System.out.println("Ungültige Eingabe. Bitte geben Sie einen gültigen Betrag ein.");<br>
+                Eingabe.nextLine(); //Leer      <br>              
+            }<br>
+        }<br>
+      Eingabe.close();<br>
+    }<br>
+}<br>
+<br>
+class produkt {<br>
+    String name;<br>
+    float preis;<br>
+    <br>
+    public produkt(float p, String n){<br>
+        preis = p;<br>
+        name = n;<br>
+    }<br>
+}<br>
+                </p>
+            </div>
+        </div>
+    </div>
+</main>
+
+    <!-- Footer -->
+    <footer>
+        <nav class="footerbar">
+            <ul class="footer-menu">
+                <li class="footer-item">
+                    <a href="impressum.html">Impressum</a>
+                </li>
+            </ul>
+        </nav>
+    </footer>
+</body>
+</html>

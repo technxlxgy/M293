@@ -1,0 +1,681 @@
+/* || Gerneral settings */
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    html {
+        height: auto;
+        font-size: 16px;
+        font-family: 'Poppins';
+        background-color: #fefbf8;
+    }
+
+    body {
+        height: 100vh;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+    }
+
+    li {
+        list-style: none;
+    }
+
+/* || Basic styles for navigation-menu */
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 1.5rem;
+        background-color: #fefbf8;
+    }
+
+    .nav-menu {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .nav-item {
+        margin-left: 2rem;
+    }
+
+/* || Style für Links in Navigationsleiste */
+    .navbar a {
+        display:inline-block;
+        position: relative;
+        overflow: hidden;
+        margin-left: 2rem;
+        padding: 0.2em 0;
+        text-align: center;
+        color: #262626;
+        text-decoration: none;
+        transition: color 0.3s ease; 
+    }
+
+    .nav-item.on-active {
+        display: none;
+    }
+
+    .navbar a:hover {
+        color: #C0CFB2;
+    }
+
+    .navbar a::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 0.1em;
+        background-color: #C0CFB2;
+        opacity: 1;
+        transition: opacity 300ms, transform 300ms;
+        transform: translate3d(-101%, 0, 0);
+    }
+
+    .navbar a:hover::after, .navbar a:focus::after {
+        transform: translate3d(0, 0, 0);
+    }
+
+/* || Hamburger-Menü */
+    .hamburger {
+        display: none;
+        background-color: #fefbf8;
+    }
+
+    .bar {
+        display: block;
+        width: 25px;
+        height: 3px;
+        margin: 5px auto;
+        transition: all 0.3s ease-in-out;
+        background-color: #101010;
+    }
+
+/* || Footer */
+    footer {
+        width: 100%;
+    }
+
+    .footerbar {
+        display: flex;
+        justify-content: flex-end; /* Elemente innerhalb des Footers positionieren sich ganz rechts vom Footer */
+        align-items: center; /* Ensure items are centered vertically */
+        padding: 1rem 1.5rem; /* Top and right padding */
+        width: 100%; /* Ensures the footer spans the full width of the page */
+        background-color: #fefbf8;
+    }
+
+    .footer-menu {
+        display: flex;
+    }
+
+    .footer-item {
+        margin-left: 2rem;
+    }
+
+/* || Style für Impressum-Link */
+    .footerbar a {
+        display:inline-block;
+        position: relative;
+        overflow: hidden;
+        margin-left: 2rem;
+        padding: 0.2em 0;
+        text-align: center;
+        color: #262626;
+        text-decoration: none;
+        transition: color 0.3s ease; 
+    }
+
+    .footerbar a:hover {
+        color: #C0CFB2;
+    }
+/* || HOME */
+  /* || Background */
+    .home-background {
+        /*background-image: linear-gradient(to right bottom, #9aad87, #9aab88, #9aaa8a, #9aa88b, #99a68c, #99a58e, #99a38f, #a3af97, #aebc9f, #b8c9a7, #c3d6af, #cde3b8, #d8f0c0);*/
+        /*background-image: linear-gradient(to right bottom, #afc49a, #abbe98, #a8b996, #a4b395, #a0ae93, #9da891, #99a38f, #a3af97, #aebc9f, #b8c9a7, #c3d6af, #cde3b8, #d8f0c0);*/
+        background-image: linear-gradient(to right bottom, #d8f0c0, #cde3b8, #c3d6af, #b8c9a7, #aebc9f, #a3af97, #99a38f, #9da891, #a0ae93, #a4b395, #a8b996, #abbe98, #afc49a);
+    } 
+
+  /* || Landingpage title */
+    .landingimg {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;  
+    }
+  
+    .titelklasse {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;    
+    }
+
+    .titel-gross h1 {
+        font-size: 150px;
+        color: #fefbf8;
+        padding: 0;
+        margin: 0;
+    }
+
+    .titel-klein span {
+        font-size: 30px;
+        color: #fefbf8;
+        margin: 0;
+    }
+
+/* || generelles Layout für die verschiedenen Seiten */
+    main {
+        flex: 1;
+        overflow: auto;
+        padding-inline: 1.5rem; /* für links und rechts */
+    }
+    
+    .inhaltsbox {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .inhaltstext {
+        margin-bottom: 1rem;
+    }
+
+    .inhaltstext a {
+        color: #C0CFB2;
+        transition: color 0.2s ease-in-out;
+    }
+    
+    .inhaltstext a:hover {
+        color: #d9e6cc;
+    }
+
+    .inhalt-in-projekt {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .video {
+        margin: 10px;
+    }
+
+    .list li {
+        list-style-type: disc;
+        margin-top: 0.5px;
+        margin-left: 10px;
+    }
+        
+    .underlist li {
+        margin-left: 20px;
+        list-style-type: none;
+    }
+    
+/* || ÜBER MICH */
+    .ubermichcontent {
+        display: flex;
+        flex-direction: row;
+        align-content: center;
+        margin-top: 1rem;
+    }
+    
+    .ubermichbild {
+        width: 80%;
+        margin-right: 2rem;
+    }
+
+    .ubermichbild img {
+        width: 100%;
+        height: auto;
+        border-radius: 15px;
+    }
+
+    .uebermichtext {
+        padding-left: 1rem;
+    }
+
+    .hobbylist li {
+        list-style: disc;
+        margin-left: 1rem;
+    }
+
+/* || FÄHIGKEITEN */
+    .faehigkeitencontent {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-top: 20px;
+    }
+
+    .hardskills {
+        background-color: #d9e6cc;
+        border-radius: 15px;
+        width: 60%;
+        padding: 20px;
+        margin-right: 20px;
+    }
+    
+    .hardskills-inhalt {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .hardskills-bild img {
+        width: auto;
+        height: 250px;
+        margin-left: 7rem;
+        border-radius: 7px;
+        background-color: #fefbf8;
+        padding: 30px;
+    }
+    
+    .softskills {
+        background-color: #C0CFB2;
+        border-radius: 15px;
+        width: 40%;
+        padding: 20px;
+    }
+
+/* || PORTFOLIO */
+    .gallery-wrapper {
+        overflow: hidden;
+        width: 100%; /*  Damit Hintergrund bei der Gallery voll ausgestreckt ist; mit vw geht es nicht, weil es sonst verschoben wird */
+        background-color: #C0CFB2;
+        padding-bottom: 1rem;
+        padding-top: 1rem;
+    }
+
+    .portfolio-gallery{
+        overflow-x: auto;
+        white-space: nowrap;
+        text-align: center;
+    }
+
+    .portfolio {
+        display: inline-flex; /* verhaltet sich wie ein Text */
+        margin: 0.5rem;
+        width: 250px;
+        background-color: #fefbf8;
+        border-radius: 13px; /* runde Ecken */
+    }
+
+    .portfolio-content {
+        display: block;
+        width: 100%;
+    }
+
+    .bild-container {
+        display: block;
+        border-top-left-radius: 13px; /* runde Ecken */
+        border-top-right-radius: 13px; /* runde Ecken */
+        width: 100%;
+        height: 140px;
+        overflow: hidden; /* versteckt den Teil des Bilds, der beim Zoom die Beschreibung verdecken würde */
+    }
+
+    .bild-container img {
+        width: 100%;
+    }
+
+    .bild-container img {
+        transition: all 0.3s ease-in-out; /* Animation */
+    }
+    
+    .bild-container img:hover {
+        transform: scale(1.2); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+        filter: brightness(60%);
+    }
+
+    .desc {
+        min-height: 140px;
+        white-space: wrap;
+        display: block;
+        padding: 15px; /* Abstände innerhalb der Porfolio */
+        text-align: center;
+    }
+
+/* || Innerhalb der einzelnen Protfolio-Projekten */
+    .text-in-protfolio {
+        margin-top: 15px;
+        margin-bottom: 15px; /* Abstände unten und oben, ich wollte keine extra Wusrt Abstände an den Seiten*/
+    }    
+
+    .code {
+        font-family: 'Courier New', Courier, monospace;
+        border: #666 solid 1px;
+        border-radius: 10px; /* runde Ecken */
+        background-color: #d9e6cc;
+        padding: 7px;
+        margin: 10px;
+    }
+
+/* || Toggles in Datamanipulation-Projekt-Abschnitt*/
+    .collapsible {
+        font-family: 'Poppins';
+        background-color: #C0CFB2;
+        color: #fff;
+        cursor: pointer;
+        padding: 18px;
+        margin-top: 10px;
+        width: 100%;
+        border: none;
+        border-radius: 11px;
+        text-align: left;
+        outline: none;
+        transition: 0.3s ease;
+    }
+      
+    .collapsible:hover {
+       font-family: 'Poppins';
+       background-color: #d9e6cc;
+       color: #262626;
+       transition: 0.3s ease;
+    }
+     
+    .content {
+        padding: 5px;
+        background-color: #fff;
+        border: #C0CFB2 solid 1px;
+        border-bottom-left-radius: 16px;
+        border-bottom-right-radius: 16px;
+    }
+
+    .content-inhalt {
+        margin: 10px;
+    }
+      
+    .collapsible.active {
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+
+/* || KONTAKT */
+    .kontakt-container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin: 20px 60px 0px 60px;
+        height: -webkit-fill-available;
+    }
+  /* || Inhalt links */
+    .kontakt-gruppe {
+        display: flex;
+        flex-direction: column;
+    }
+
+    lable {
+        display: block;
+        margin-top: 15px;
+        font-size: 16px;
+        font-weight: 500;
+    }
+
+    .contact-left {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        gap: 20px;
+    }
+
+    .contact-inputs {
+        width: 400px;
+        height: 50px;
+        border: 1px solid #C0CFB2;
+        outline: none;
+        padding-left: 25px;
+        padding-right: 25px;
+        font-weight: 500;
+        color: #666;
+        border-radius: 5px;
+        font-family: 'Poppins';
+    }
+
+    .contact-left textarea {
+        height: 100px;
+        padding-top: 15px;
+        border-radius: 5px;
+        font-family: 'Poppins';
+        resize: none;
+    }
+
+    .contact-inputs:focus {
+        border: 2px solid #666; 
+    }
+
+    .contact-inputs::placeholder {
+        color: #a7a4a4;
+        font-family: 'Poppins';
+        font-weight: normal;
+    }
+
+    .contact-left button {
+        display: flex;
+        align-items: center;
+        padding: 7px 15px;
+        font-family: 'Poppins';
+        font-size: 16px;
+        color: #fff;
+        gap: 10px;
+        border: none;
+        border-radius: 5px;
+        background-color: #C0CFB2;
+        cursor: pointer;
+        transition: 0.3s ease;
+    }
+
+    .contact-left button:hover {
+        display: flex;
+        align-items: center;
+        padding: 7px 15px;
+        font-family: 'Poppins';
+        font-size: 16px;
+        color: #262626;
+        gap: 10px;
+        border: none;
+        border-radius: 5px;
+        background-color: #d9e6cc;
+        cursor: pointer;
+        transition: 0.2s ease;
+    }
+  /* || Inhalt rechts */
+    .container-right {
+        width: 50%;
+        margin-left: 30vh;
+    }
+
+    .container-right iframe {
+        height: 50vh;
+        border: none;
+    }
+
+
+/* || Responsive */
+@media only screen and (max-width: 938px){
+
+/* || Navigationsleiste */
+    .nav-menu {
+        position: fixed; /* bewegt sich nicht */
+        left: -100%; /* macht, dass sich das Menü versteckt */
+        top: 3rem; /* Abstand zum Top der Webseite */
+        flex-direction: column;
+        background-color: #fefbf8;
+        width: 100%;
+        height: 100%; /* Nimmt die volle Höhe minus dem Abstand zum Top */
+        border-radius: 10px;
+        padding-bottom: 10rem;
+        text-align: center;
+        transition: 0.3s;
+        z-index: 1000; /* Damit es den Footer und andere Inhalte verdeckt */
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .nav-item {
+        margin: 1rem 0;
+    }
+
+    .nav-item.on-active {
+        display: block;
+    }
+
+/* || Javascript Hamburger Animation */
+    .hamburger {
+        display: block;
+        cursor: pointer;
+    }
+
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+/* || HOME */
+    .titelklasse {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .titelklasse h1 {
+        @font-face {
+            font-family: Demo-The-Seasons;
+            src: url("Fontspring-DEMO-theseasons-bd.otf");
+            font-family: Demo-The-Seasons;
+        }
+        font-size: 100px;
+        color: #C0CFB2;
+        padding: 0;
+        margin: 0;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .titelklasse span {
+        font-size: 30px;
+        color: #C0CFB2;
+        margin: 0;
+    }
+
+/* || ÜBER MICH */
+    .ubermichcontent {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .ubermichtext {
+        margin-bottom: 2rem;
+    }
+
+    .ubermichbild {
+        display: flex;
+        justify-content: center; /* Horizontally centers the image */
+        align-items: center; /* Vertically centers the image if needed */
+    }
+
+/* || FÄHIGKEITEN */
+    .faehigkeitencontent {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin-top: 20px;
+    }
+
+    .hardskills {
+        background-color: #d9e6cc;
+        border-radius: 15px;
+        width: 100%;
+        padding: 20px;
+        margin-bottom: 1rem;
+    }
+    
+    .hardskills-inhalt {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .hardskills-bild img {
+        display: none;
+    }
+    
+    .softskills {
+        background-color: #C0CFB2;
+        border-radius: 15px;
+        width: 100%;
+        padding: 20px;
+    }
+
+/* || PORTFOLIO */
+
+  /* || Innerhalb der einzelnen Protfolio-Projekten */
+    .text-in-protfolio {
+        margin-top: 1rem;
+        margin-bottom: 1rem; /* Abstände unten und oben, ich wollte keine extra Wusrt Abstände an den Seiten*/
+    }    
+
+    .inhalt-in-projekt {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .code {
+        font-family: 'Courier New', Courier, monospace;
+        border: #666 solid 1px;
+        border-radius: 10px; /* runde Ecken */
+        background-color: #d9e6cc;
+        padding: 7px;
+        margin: 10px;
+        overflow: hidden;
+    }
+
+/* || KONTAKT */
+    .kontakt-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 1rem;
+    }
+
+    .contact-inputs {
+        width: 320px;
+        height: 50px;
+        border: 1px solid #C0CFB2;
+        outline: none;
+        padding-left: 25px;
+        padding-right: 25px;
+        font-weight: 500;
+        color: #666;
+        border-radius: 5px;
+        font-family: 'Poppins';
+    }
+
+  /* || Mappe */
+    .container-right {
+        display: none;
+    }
+
+    .container-right iframe {
+        height: 50vh;
+        border: none;
+    }
+}

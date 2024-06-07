@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fähigkeiten</title>
+    <link rel="stylesheet" href="stylesheet.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+<!-- Navigationsleiste -->
+    <header>
+        <nav class="navbar">
+            <span class="nav-logo">IVA S.</span>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="uebermich.html">Über mich</a>
+                </li>
+                <li class="nav-item">
+                    <a href="faehigkeiten.html">Fähigkeiten</a>
+                </li>
+                <li class="nav-item">
+                    <a href="portfolio.html">Portfolio</a>
+                </li>
+                <li class="nav-item">
+                    <a href="kontakt.html">Kontakt</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+
+<!-- Javascript für Navigationsleiste -->
+    <script>
+        const hamburger = document.querySelector(".hamburger");
+        const navMenu = document.querySelector(".nav-menu");
+
+        hamburger.addEventListener("click", mobileMenu);
+
+        function mobileMenu() {
+            hamburger.classList.toggle("active");
+            navMenu.classList.toggle("active");
+        }
+
+        const navLink = document.querySelectorAll(".nav-link");
+
+        navLink.forEach(n => n.addEventListener("click", closeMenu));
+
+        function closeMenu() {
+            hamburger.classList.remove("active");
+            navMenu.classList.remove("active");
+        }
+    </script>
+
+<!-- Inhalt -->
+<main>
+    <div class="inhaltsbox">
+        <div class="inhaltstitel">
+            <h1>Fähigkeiten</h1>
+        </div>
+        <div class="faehigkeitencontent">
+            <div class="hardskills">
+                <h2>Hardskills</h2>
+                <div class="hardskills-inhalt">
+                    <div class="skill-list">
+                        <ul class="list">
+                            <li>Webdesign in Figma</li>
+                            <li>Computer-Sprachen:</li>
+                            <ul class="underlist">
+                                <li>⮞ HTML und CSS</li>
+                                <li>⮞ C</li>
+                                <li>⮞ SQL</li>
+                                <li>⮞ Java</li>
+                            </ul>
+                            <li>Sprachen:</li>
+                            <ul class="underlist">
+                                <li>⮞ Serbisch</li>
+                                <li>⮞ Deutsch</li>
+                                <li>⮞ Englisch</li>
+                                <li>⮞ Französisch-Kenntnisse</li>
+                            </ul>
+                            <li>2 Jahre KV-Kenntnisse</li>
+                        </ul>
+                    </div>
+                    <div class="hardskills-bild">
+                        <img src="./Bilder/balance.png" alt="Work-Life-Balance Icon">
+                    </div>
+                </div>
+            </div>
+            <div class="softskills">
+                <h2>Softskills</h2>
+                <div class="skill-list">
+                    <ul class="list">
+                        <li>Emotionalle Intelligenz</li>
+                        <li>Wissensdrang</li>
+                        <li>Anstrengung</li>
+                        <li>Logisches Denkvermögen</li>
+                        <li>Motivation</li>
+                        <li>Teamfähig wie auch selbstständig</li>
+                        <li>offen für Feedback und Verbesserungen</li>
+                    </ul>
+                </div> 
+            </div>
+        </div>      
+    </div>
+</main>
+
+<!-- Footer -->
+    <footer>
+        <nav class="footerbar">
+            <ul class="footer-menu">
+                <li class="footer-item">
+                    <a href="impressum.html">Impressum</a>
+                </li>
+            </ul>
+        </nav>
+    </footer>
+</body>
+</html>

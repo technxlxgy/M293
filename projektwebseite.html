@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Getränkeautomat in Java</title>
+    <link rel="stylesheet" href="stylesheet.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Navigationsleiste -->
+    <header>
+        <nav class="navbar">
+            <span class="nav-logo">IVA S.</span>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="uebermich.html">Über mich</a>
+                </li>
+                <li class="nav-item">
+                    <a href="faehigkeiten.html">Fähigkeiten</a>
+                </li>
+                <li class="nav-item">
+                    <a href="portfolio.html">Portfolio</a>
+                </li>
+                <li class="nav-item">
+                    <a href="kontakt.html">Kontakt</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+
+<!-- Javascript für Navigationsleiste -->
+    <script>
+        const hamburger = document.querySelector(".hamburger");
+        const navMenu = document.querySelector(".nav-menu");
+
+        hamburger.addEventListener("click", mobileMenu);
+
+        function mobileMenu() {
+            hamburger.classList.toggle("active");
+            navMenu.classList.toggle("active");
+        }
+
+        const navLink = document.querySelectorAll(".nav-link");
+
+        navLink.forEach(n => n.addEventListener("click", closeMenu));
+
+        function closeMenu() {
+            hamburger.classList.remove("active");
+            navMenu.classList.remove("active");
+        }
+    </script>
+
+<main>
+    <div class="inhaltsbox">
+        <div class="inhaltstext">
+            
+            <h1>Portfolio-Webseite</h1>
+            <p class="text-in-protfolio">
+                Diese Webseite ist ein benotetes Schulprojekt des Moduls 293 (Webauftritt erstellen und veröffentlichen). Es hat mir viel Spass gemacht, das Design zu entwerfen und es danach auch technisch umzusetzen. Ich hoffe, dass ich in Zukunft weitere solche Projekte planen und ausführen darf. Ebenso habe ich mir vorgenommen, an dieser Webseite weiterzuarbeiten oder eine zweite (verbesserte) Version zu machen. Mal sehen, was sich daraus entwickelt!
+               <br>
+               <br>
+                Ich habe noch eine lustige Geschichte zu dieser Webseite. Anfangs hatte ich Schwierigkeiten, mir ein Design auszudenken. Sogar von Pinterest und YouTube habe ich versucht, mich inspirieren zu lassen, aber ohne Erfolg. Schliesslich träumte ich während der Nacht vom Design, welches Sie nun sehen. Diese Situation kann als Zeichen gesehen werden, dass ausreichender Schlaf wichtig ist und auch seine Vorteile hat.
+            </p>
+        </div>
+    </div>
+</main>
+
+    <!-- Footer -->
+    <footer>
+        <nav class="footerbar">
+            <ul class="footer-menu">
+                <li class="footer-item">
+                    <a href="impressum.html">Impressum</a>
+                </li>
+            </ul>
+        </nav>
+    </footer>
+</body>
+</html>
