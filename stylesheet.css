@@ -399,8 +399,6 @@
         display: flex;
         flex-direction: row;
         align-items: center;
-        margin: 20px 60px 0px 60px;
-        height: -webkit-fill-available;
     }
   /* || Inhalt links */
     .kontakt-gruppe {
@@ -653,7 +651,6 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        margin: 1rem;
     }
 
     .contact-inputs {
