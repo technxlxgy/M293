@@ -500,6 +500,11 @@
 /* || Responsive */
 @media only screen and (max-width: 938px){
 
+    main {
+        box-sizing: border-box;
+        padding-bottom: 4rem;
+    }
+
 /* || Navigationsleiste */
     .nav-menu {
         position: fixed; /* bewegt sich nicht */
@@ -544,6 +549,11 @@
 
     .hamburger.active .bar:nth-child(3) {
         transform: translateY(-8px) rotate(-45deg);
+    }
+
+/* || Footer */
+    footer {
+        display: none;
     }
 
 /* || HOME */
