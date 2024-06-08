@@ -644,6 +644,10 @@
         overflow: hidden;
     }
 
+    .video {
+        width: fit-content;
+    }
+
 /* || KONTAKT */
     .kontakt-container {
         display: block;
