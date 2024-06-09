@@ -200,9 +200,11 @@
 
     .video {
         margin: 10px;
+        margin-right: 2%;
     }
 
     video {
+        margin-top: 5%;
         width: 100%;
     }
 
@@ -359,6 +361,15 @@
         background-color: #d9e6cc;
         padding: 7px;
         margin: 10px;
+    }
+
+    .text-in-protfolio a {
+        color: #C0CFB2;
+        transition: color 0.2s ease-in-out;
+    }
+    
+    .text-in-protfolio a:hover {
+        color: #d9e6cc;
     }
 
 /* || Toggles in Datamanipulation-Projekt-Abschnitt*/
