@@ -645,7 +645,7 @@
     }
 
     .video {
-        width: fit-content;
+        width: 100%;
     }
 
 /* || KONTAKT */
