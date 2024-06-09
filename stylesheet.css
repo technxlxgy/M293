@@ -202,6 +202,10 @@
         margin: 10px;
     }
 
+    video {
+        width: 50%;
+    }
+
     .list li {
         list-style-type: disc;
         margin-top: 0.5px;
@@ -644,7 +648,7 @@
         overflow: hidden;
     }
 
-    .video {
+    video {
         width: 100%;
     }
 
