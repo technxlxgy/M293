@@ -659,6 +659,10 @@
         overflow: hidden;
     }
 
+    .video {
+        margin: 10px;
+    }
+
     video {
         width: 50%;
     }
